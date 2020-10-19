@@ -22,22 +22,30 @@ class Gossip
         return all_gossips
     end
     # Méthode qui affiche tout les potins sur la page d'accueil
-   def self.find(id)
-    CSV.read("./db/gossip.csv").each_with_index do |row, index|
-        if index+1 == id 
-            return "L'auteur : #{row[0]} <br> Et son potin : #{row[1]} "
+    def self.find(id)
+        all_gossips = []
+        CSV.read("./db/gossip.csv").each do |csv_line|
+          all_gossips << Gossip.new(csv_line[0], csv_line[1])
         end
-    end
-   end
+        return all_gossips[id.to_i]
+      end
    
     # Méthode qui permet de modifier un potin
-   def self.update(author, content, id)
-        update_array = self.all
-		update_array[id.to_i].content = content
-		update_array[id.to_i].author = author
-		File.open("./db/gossip.csv", 'w') {|file|}
-		update_array.each do |gossip|
-			gossip.save
-		end	
-   end
+    def self.update(new_author, new_content, id)
+
+        rows_array = Array.new
+        CSV.read('./db/gossip.csv').each do |csv_line|
+          rows_array << Gossip.new(csv_line[0], csv_line[1])
+        end
+
+        gossip = rows_array[id]
+        gossip.author = new_author
+        gossip.content = new_content
+        rows_array[id] = gossip
+        CSV.open('./db/gossip.csv', 'w') do |csv|
+        rows_array.each do |gossip|
+          csv << [gossip.author, gossip.content]
+        end
+      end
 end
+end 

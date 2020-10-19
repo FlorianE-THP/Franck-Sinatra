@@ -4,13 +4,15 @@
   </head>
   <body>
     <h1>The Gossip Project!</h1>
+    <h3> Découvre les potins les plus chaud de ta session </h3>
 		<% gossips.each_with_index do |gossip, index| %>
         <p>
-          <a href="/gossips/<%=index%>/">Potin nº <%=index+1%></a>
+          <a href=<%="/gossips/#{index}"%>>Potin nº <%=index%></a>
           <br/>
           <%= gossip.author %> ===> <%= gossip.content %><br>
         </p>
       <% end %>
+      
     <p> Et si tu veux en créer un.. </p>
     <a href="/gossips/new/">CLIQUE ICI</a>
   </body>

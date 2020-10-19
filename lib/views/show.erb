@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Flo Gossip Project</title>
+  </head>
+  <body>
+    <h1>Bienvenue</h1>
+      <h3>Voici la liste des potins :</h3>
+      <%= gossip.author %> ===> <%= gossip.content %>
+      <br> <br>
+
+	  <a href=<%="/gossips/#{id}/edit/"%>>MODIFIER </a>
+
+    <h3 style="color:darkred;">Pour creer une nouvelle connerie, c'est =><a href="/gossips/new/">ICI</a></h3>
+	<h3 style="color:darkred;">Pour revenir à l'accueil, c'est =><a href="http://localhost:4567/">ICI</a></h3>
+  </body>
+</html>
