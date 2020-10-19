@@ -1,0 +1,23 @@
+<html>
+	<head><title>Modifier Potin</title></head>
+	<body>
+		<h1>Modifier ce potin</h1>
+		<h2>Voici la page de modification du potin n° <%=params['id']%> !</h2>
+		<p>
+          <%= Gossip.find(params['id'].to_i) %>
+        </p>
+
+    <form action='/gossips/:id/edit/' method='POST'>
+      Balance ton blase : <input type='text' name='gossip_author'/><br/>
+      <br/>
+      Balance ta modif de potin : <input type='text' name='gossip_content'/><br/>
+      <br/>
+      <input type='submit'/>
+    </form>
+		
+
+	<a title='Index' href='/'>Lien pour retourner à l'Accueil</a>
+
+
+	</body>
+</html>
