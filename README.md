@@ -1,39 +1,40 @@
-# KESAKO?
+# How it is ?
 
-The Gossip Project est un test de Sinatra, le frameworks de Ruby. 
+The Gossip Project is a test of Sinatra, a framework in Ruby 
 
 ## Installation
 
-Pour lancer le programme, il faut lancer un 
+To launch the program, you have to
 
 ```bash
 bundle install
 shotgun -p 4567
 ```
 
-## Utilisation
+## Usage
 
-Le programme est une plateforme de potin en ligne autour de THP. 
-Il est possible de voir les potins sur la page d'acceuil 
+This program is a plateform of gossip online. 
 
-[ACCUEIL](http://localhost:4567/)
+It is possible to see gossips on the Home Page.
+"http://localhost:4567/gossips/1"
+=> [ACCUEIL](http://localhost:4567/)
 
-Pour allez à un un potins en particulier 
+To see a precise gossip.
 "http://localhost:4567/gossips/1"
 => [POTINS/ID](http://localhost:4567/gossips/1)
 
-Pour le modifier 
+To modify
 "http://localhost:4567/gossips/1/edit"
 => [POTINS/ID](http://localhost:4567/gossips/1/edit)
 
-### Pas pour tout de suite
+### Not Finish
 
-J'ai commencé l'exercice du Commentaires, mais je n'ai pas terminé
+I start a little of commentaries, but i have not finish
 
-## Merci
-Merci d'avoir lu le README.. 
+## Thanks
+Thanks to read the README.md
 
-Et pour avoir une template stylé comme ça : j'ai trouvé ça là 
+And to find this template so stylish, go to this website
 
 => [README GENERATOR](https://www.makeareadme.com/)
 
